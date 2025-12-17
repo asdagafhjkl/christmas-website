@@ -11,7 +11,8 @@
   ];
 
   mkDerivation = {
-    src = gitignore.lib.gitignoreSource ./.;
+    # src = gitignore.lib.gitignoreSource ./.;
+    src = lib.cleanSource ./.;
   };
 
   deps = {nixpkgs, ...}: {

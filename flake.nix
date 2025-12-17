@@ -11,7 +11,7 @@
     dream2nix = {
       url = "github:nix-community/dream2nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, gitignore, dream2nix, ... }:

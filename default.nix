@@ -2,6 +2,7 @@
   lib,
   config,
   dream2nix,
+  gitignore,
   ...
 }: {
   imports = [
@@ -10,7 +11,7 @@
   ];
 
   mkDerivation = {
-    src = lib.gitignoreSource ./.;
+    src = gitignore.lib.gitignoreSource ./.;
   };
 
   deps = {nixpkgs, ...}: {

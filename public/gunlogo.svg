@@ -1,4 +1,4 @@
-<template>
+<?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
   <rect x="76.543" y="80.864" width="356.173" height="64.198" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
   <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 46.297 286.419 L 72.223 217.901 C 80.55 182.511 82.098 145.679 82.098 145.679"/>
@@ -13,4 +13,3 @@
   <path d="M -420.99 67.902 L -398.151 80.247 L -420.99 80.247 L -420.99 67.902 Z" bx:shape="triangle -420.99 67.902 22.839 12.345 0 0 1@f9f586bb" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(-1, 0, 0, 1, 0, 0)"/>
   <rect x="431.481" y="91.975" width="8.642" height="23.457" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
 </svg>
-</template>

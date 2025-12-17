@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getRouterParam, getResponseStatusText } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
@@ -30,13 +30,14 @@ import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/tharunpvk
 import { isVNode, toValue, isRef } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/vue/index.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1, basename } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/pathe/dist/index.mjs';
+import { dirname as dirname$1, resolve as resolve$1, basename, isAbsolute } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/pathe/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/unhead/dist/server.mjs';
 import process$1 from 'node:process';
 import { renderToString } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/vue/server-renderer/index.mjs';
 import { walkResolver } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/unhead/dist/utils.mjs';
 import { getIcons } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/@iconify/utils/lib/index.js';
 import { collections } from 'file:///home/tharunpvkp/projects/christmas-website/.nuxt/nuxt-icon-server-bundle.mjs';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///home/tharunpvkp/projects/christmas-website/node_modules/ipx/dist/index.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"/home/tharunpvkp/projects/christmas-website/server/assets"}];
 
@@ -925,6 +926,18 @@ const _inlineRuntimeConfig = {
   "public": {},
   "icon": {
     "serverKnownCssClasses": []
+  },
+  "ipx": {
+    "baseURL": "/_ipx",
+    "alias": {},
+    "fs": {
+      "dir": [
+        "/home/tharunpvkp/projects/christmas-website/public"
+      ]
+    },
+    "http": {
+      "domains": []
+    }
   }
 };
 const envOptions = {
@@ -2297,6 +2310,24 @@ const _X7PlCW = defineCachedEventHandler(async (event) => {
   // 1 week
 });
 
+const _Flm4Ea = lazyEventHandler(() => {
+  const opts = useRuntimeConfig().ipx || {};
+  const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
+  const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
+  const httpStorage = opts.http?.domains ? ipxHttpStorage({ ...opts.http }) : void 0;
+  if (!fsStorage && !httpStorage) {
+    throw new Error("IPX storage is not configured!");
+  }
+  const ipxOptions = {
+    ...opts,
+    storage: fsStorage || httpStorage,
+    httpStorage
+  };
+  const ipx = createIPX(ipxOptions);
+  const ipxHandler = createIPXH3Handler(ipx);
+  return useBase(opts.baseURL, ipxHandler);
+});
+
 const _lazy_SAa24d = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
@@ -2304,6 +2335,7 @@ const handlers = [
   { route: '/__nuxt_error', handler: _lazy_SAa24d, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/api/_nuxt_icon/:collection', handler: _X7PlCW, lazy: false, middleware: false, method: undefined },
+  { route: '/_ipx/**', handler: _Flm4Ea, lazy: false, middleware: false, method: undefined },
   { route: '/_fonts/**', handler: _lazy_SAa24d, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_SAa24d, lazy: true, middleware: false, method: undefined }
 ];

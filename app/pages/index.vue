@@ -1,74 +1,100 @@
+<script setup>
+const testimonies = ref([
+  {
+    name: "Hayden Chan",
+    description: "I found it very inspiring and amazing.",
+    avatar: { src: "https://i.pravatar.cc/150?u=primate", },
+  },
+  {
+    name: "Mohab",
+    description: "I really enjoyed the fun when shooting people with the snow ball gun",
+    avatar: { src: "https://i.pravatar.cc/150?u=shoot", },
+  },
+  {
+    name: "John",
+    description: "It was very fun and it helped me win all the snow ball fights",
+    avatar: { src: "https://i.pravatar.cc/150?u=banana", },
+  },
+  {
+    name: "Georg Simon Ohms",
+    description: "This snowball gun is AMAZING. It shoots far, loads easily, and makes snowball fights way more fun. My kids didn’t want to come inside even after an hour. Durable, lightweight, and totally worth it.",
+    avatar: { src: "https://i.pravatar.cc/150?u=dfgjhg", },
+  },
+  {
+    name: "George Orwell",
+    description: "The snowball gun works really well and fires consistently. It’s easy to use and has good range.",
+    avatar: { src: "https://i.pravatar.cc/150?u=jshdg", },
+  },
+]);
+</script>
+
 <template>
   <div>
     <UPageHero
-      title="Nuxt Starter Template"
-      description="A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours."
-      :links="[{
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-        target: '_blank',
-        trailingIcon: 'i-lucide-arrow-right',
-        size: 'xl'
-      }, {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-templates/starter',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }]"
-    />
+      title="Snow Ball Gun"
+      headline="The No. 1 Best Selling Gun"
+      description="A police certified snow ball gun. So easy to use that even a primate could use it. Easy, compact, and small, without sacrificing power."
+    >
+      <NuxtImg src="/GunPolice.png" alt="A police holding our gun" />
+    </UPageHero>
 
     <UPageSection
       id="features"
-      title="Everything you need to build modern Nuxt apps"
-      description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
+      title="More than what you need"
+      description="Our product has features and innovation that competitors have not even thought of. We have too many features to list so here is a brief summary of what we offer."
       :features="[{
-        icon: 'i-lucide-rocket',
-        title: 'Production-ready from day one',
-        description: 'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
+        icon: 'i-heroicons-rocket-launch',
+        title: '100 KPH top-speed',
+        description: 'Using our new break through patented technology we have been able to shoot snow balls just over 100 kps. Using quatum ṫ̸̮̮͓̓̾͋ͅh̷̛̖i̴̧̮̘̞̿̓s̸̪̅͋Ị̴̯̘͇̯̈́̍̓̓͘s̴͚͛̏N̸̰̘̍̄̆̚ͅơ̴͙̳̬̍̈́t̶̥̉R̴̢̲̞͓̐̿e̴̹̖̥̐͌̓̊̌͜a̶̢̙͖̎͊̊͝l̷͙̝̫̻͗̄.'
       }, {
-        icon: 'i-lucide-palette',
-        title: 'Beautiful by default',
-        description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
+        icon: 'i-heroicons-check-badge',
+        title: 'Police certified',
+        description: 'Our gun is so good and amazing and great that even the police use it to shoot down and neutralise criminals.'
       }, {
-        icon: 'i-lucide-zap',
-        title: 'Lightning fast',
-        description: 'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
+        icon: 'i-lucide-shovel',
+        title: 'Comes with shovel',
+        description: 'Our product is shipt with a shovel so you can quickly, effeciently and easily reload it in the heat of the battle. You need it.'
       }, {
-        icon: 'i-lucide-blocks',
-        title: '100+ components included',
-        description: 'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
+        icon: 'i-lucide-thermometer-snowflake',
+        title: 'Keeps snow from melting',
+        description: 'The gun\'s magazine has a temperature decreaser built into it keeping the snow nice and cool so you can come and shoot people later.'
       }, {
-        icon: 'i-lucide-code-2',
-        title: 'Developer experience first',
-        description: 'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
+        icon: 'i-lucide-wind',
+        title: 'Rapid fire rates',
+        description: 'We have built it with a really fast fire rate so you can gun down enemys on the battlefield with ease. Like gliding a knife through butter.'
       }, {
-        icon: 'i-lucide-shield-check',
-        title: 'Built for scale',
-        description: 'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
+        icon: 'i-lucide-lock',
+        title: 'Makes me feel safe',
+        description: 'Having the gun on me makes me feel very safe. If I feel threatend I know I can just shoot them.'
       }]"
     />
 
+    <UContainer class="p-5">
+      <h1 class="text-3xl text-center">5-star reviews all-round</h1>
+      <StarRating :rating="5" class=""/>
+      <UPageGrid>
+        <UUser v-for="(testimony, index) in testimonies" :key="index" v-bind="testimony" />
+      </UPageGrid>
+    </UContainer>
+
+    <UContainer>
+      <h1 class="text-5xl font-bold text-center">One of the best deals you'll ever get</h1>
+      <UContainer class="rotate-35 p-50">
+	<h2 class="text-9xl font-black text-red text-center">99% OFF</h2>
+      </UContainer>
+      <p class="text-center">Only £699.99 till it becomes yours</p>
+    </UContainer>
+
     <UPageSection>
       <UPageCTA
-        title="Ready to build your next Nuxt app?"
-        description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
+        title="Ready to buy your gun?"
+        description="Join thousands of gun users now. Get shooting people today."
         variant="subtle"
         :links="[{
-          label: 'Start building',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-          target: '_blank',
+          label: 'Buy now',
+          to: '/',
           trailingIcon: 'i-lucide-arrow-right',
           color: 'neutral'
-        }, {
-          label: 'View on GitHub',
-          to: 'https://github.com/nuxt-ui-templates/starter',
-          target: '_blank',
-          icon: 'i-simple-icons-github',
-          color: 'neutral',
-          variant: 'outline'
         }]"
       />
     </UPageSection>

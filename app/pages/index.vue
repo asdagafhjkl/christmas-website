@@ -92,7 +92,7 @@ function spin() {
       <UContainer :class="['rotate-35', 'py-50', 'lg:p-50', 'transition-transform', 'duration-500', spinning ? 'animate-spin' : '']">
 	<h2 @click="spin" class="text-9xl font-black text-center">99% OFF</h2>
       </UContainer>
-      <p class="text-center">Only £699.99 till it becomes yours</p>
+      <p class="text-center">Only £499.99 till it becomes yours</p>
       <h2 class="text-5xl font-bold text-red-500 text-center animate-pulse">Offer ends soon!</h2>
     </UContainer>
 

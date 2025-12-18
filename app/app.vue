@@ -47,7 +47,7 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Cold Buisness • Just get a gun and survive natural selection {{ new Date().getFullYear() }}
+          Cold Business • Just get a gun and survive natural selection {{ new Date().getFullYear() }}
         </p>
       </template>
 

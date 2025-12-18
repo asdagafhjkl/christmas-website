@@ -97,6 +97,7 @@ function spin() {
     </UContainer>
 
 	<UPageSection
+	  icon="i-lucide-award"
       title="Police and Army Certified"
       description="Our revolutionary gun is used by trained profesionals. They really like our gun for its ease of use and power."
 	  orientation="horizontal"

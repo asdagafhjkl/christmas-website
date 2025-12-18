@@ -24,6 +24,6 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseUrl: "/christmas-website/",
+    baseURL: "/christmas-website/",
   }
 })

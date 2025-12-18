@@ -34,7 +34,7 @@ function spin() {
   spinning.value = true
   setTimeout(() => {
     spinning.value = false
-  }, 1500)
+  }, 2000)
 }
 </script>
 
@@ -95,6 +95,14 @@ function spin() {
       <p class="text-center">Only £699.99 till it becomes yours</p>
       <h2 class="text-5xl font-bold text-red-500 text-center animate-pulse">Offer ends soon!</h2>
     </UContainer>
+
+	<UPageSection
+      title="Police and Army Certified"
+      description="Our revolutionary gun is used by trained profesionals. They really like our gun for its ease of use and power."
+	  orientation="horizontal"
+    >
+      <NuxtImg src="/Seal-team-6-usign-our-gun.png" alt="Seal team 6 using our gun" />
+    </UPageSection>
 
     <UPageSection>
       <UPageCTA

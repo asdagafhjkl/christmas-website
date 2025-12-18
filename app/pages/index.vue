@@ -26,6 +26,16 @@ const testimonies = ref([
     avatar: { src: "https://i.pravatar.cc/150?u=jshdg", },
   },
 ]);
+
+const spinning = ref(false)
+
+function spin() {
+  console.log("ghfd")
+  spinning.value = true
+  setTimeout(() => {
+    spinning.value = false
+  }, 1500)
+}
 </script>
 
 <template>
@@ -79,10 +89,11 @@ const testimonies = ref([
 
     <UContainer>
       <h1 class="text-5xl font-bold text-center">One of the best deals you'll ever get</h1>
-      <UContainer class="rotate-35 p-50">
-	<h2 class="text-9xl font-black text-red text-center">99% OFF</h2>
+      <UContainer :class="['rotate-35', 'py-50', 'lg:p-50', 'transition-transform', 'duration-500', spinning ? 'animate-spin' : '']">
+	<h2 @click="spin" class="text-9xl font-black text-center">99% OFF</h2>
       </UContainer>
       <p class="text-center">Only £699.99 till it becomes yours</p>
+      <h2 class="text-5xl font-bold text-red-500 text-center animate-pulse">Offer ends soon!</h2>
     </UContainer>
 
     <UPageSection>

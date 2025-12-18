@@ -4,7 +4,7 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/christmas-website/favicon.ico' }
   ],
   htmlAttrs: {
     lang: 'en'
@@ -39,6 +39,8 @@ useSeoMeta({
     <UMain>
       <NuxtPage />
     </UMain>
+
+    <USeparator />
 
     <UFooter>
       <template #left>

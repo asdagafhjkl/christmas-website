@@ -113,7 +113,7 @@ function spin() {
         :links="[{
           label: 'Buy now',
           to: '/buy',
-          trailingIcon: 'i-lucide-arrow-right',
+          trailingIcon: 'i-heroicons-chevron-right',
           color: 'neutral'
         }]"
       />

@@ -16,7 +16,7 @@ function updateNumber() {
     <UContainer>
       <h2 class="text-5xl text-center">Your Number</h2>
       <h1 class="text-5xl text-center">{{ number }}</h1>
-      <UButton class="text-center" icon="i-heroicons-ticket" @click="updateNumber">Re-roll</UButton>
+      <UButton class="text-center w-full mx-auto" icon="i-heroicons-ticket" @click="updateNumber">Re-roll</UButton>
     </UContainer>
   </div>
 </template>

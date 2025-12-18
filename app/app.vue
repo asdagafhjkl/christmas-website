@@ -31,7 +31,7 @@ useSeoMeta({
         </NuxtLink>
       </template>
 
-      <UNavigationMenu :items="[{ label: 'Buy', to: '/buy', icon: 'i-heroicons-shopping-cart' }, { label: 'Customer Service', to: '/customers'}]" />
+      <UNavigationMenu :items="[{ label: 'Buy', to: '/buy', icon: 'i-heroicons-shopping-cart' }, { label: 'Customer Service', to: '/customers'}, { label: 'Free gun', to: '/free'}]" />
 
       <template #right>
         <UColorModeButton />

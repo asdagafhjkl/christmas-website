@@ -25,11 +25,13 @@ useSeoMeta({
 <template>
   <UApp>
     <UHeader>
-      <template #left>
+      <template #title>
         <NuxtLink to="/">
           <AppLogo class="w-auto pt-5 h-20 shrink-0" />
         </NuxtLink>
       </template>
+
+      <UNavigationMenu :items="[{ label: 'Buy', to: '/buy', icon: 'i-heroicons-shopping-cart' }]" />
 
       <template #right>
         <UColorModeButton />

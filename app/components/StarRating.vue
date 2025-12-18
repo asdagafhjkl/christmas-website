@@ -5,9 +5,9 @@
         v-for="i in rating"
         :key="i"
         name="i-heroicons-star-20-solid"
-        class="text-yellow-500"
+        class="text-yellow-500 size-7"
       />
-      <UIcon v-for="i in 5 - rating" :key="i" name="i-heroicons-star" />
+      <UIcon v-for="i in 5 - rating" :key="i" name="i-heroicons-star" class="size-7" />
     </div>
     <p>{{ rating }} stars</p>
   </span>

@@ -28,7 +28,7 @@
           title: 'Seal Team 6 Training',
           description: 'Trainning for intermediates, by the police',
           price: '£200/mo',
-          features: ['One-on-one training provided by a member of seal team 6', '10kg of snow per month shipped to your home', 'Everything in the starter plan'],
+          features: ['One-on-one training provided by a member of seal team 6', '10kg of snow per month shipped to your home', 'Everything in the police plan'],
           button: { label: 'Register now' }, 
         },
       ]"

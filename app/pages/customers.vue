@@ -6,7 +6,7 @@
     />
 
     <UPageSection title="FAQs" description="Here are some questions we frequently get asked by our customers">
-      <UCollapsible class="flex flex-col gap-2 w-48">
+      <UCollapsible class="flex flex-col gap-2 w-full">
         <UButton
           label="If I shoot someone will they die"
           color="neutral"
@@ -19,7 +19,7 @@
           <p>They totally will not feel pain. They won't be harmed. Please do not attempt to sue us.</p>
         </template>
       </UCollapsible>
-      <UCollapsible class="flex flex-col gap-2 w-48">
+      <UCollapsible class="flex flex-col gap-2 w-full">
         <UButton
           label="Is it affordable"
           color="neutral"

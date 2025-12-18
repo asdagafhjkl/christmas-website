@@ -112,7 +112,7 @@ function spin() {
         variant="subtle"
         :links="[{
           label: 'Buy now',
-          to: '/',
+          to: '/buy',
           trailingIcon: 'i-lucide-arrow-right',
           color: 'neutral'
         }]"

@@ -14,9 +14,9 @@ function updateNumber() {
     <UPageHero title="Here is your chance to win a free gun" />
 
     <UContainer>
-      <h2 class="text-5xl">Your Number</h2>
-      <h1 class="text-5xl">{{ number }}</h1>
-      <UButton icon="i-heroicons-ticket" @click="updateNumber">Re-roll</UButton>
+      <h2 class="text-5xl text-center">Your Number</h2>
+      <h1 class="text-5xl text-center">{{ number }}</h1>
+      <UButton class="text-center" icon="i-heroicons-ticket" @click="updateNumber">Re-roll</UButton>
     </UContainer>
   </div>
 </template>

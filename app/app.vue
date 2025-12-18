@@ -51,7 +51,7 @@ useSeoMeta({
 
       <template #right>
         <p class="text-sm text-muted">
-	  By Tharun Pandiyan Vijay Kumar Pandiyan, Blake Hatfield, Aiden Lusher, Elliot Morton.
+	      By Tharun Pandiyan Vijay Kumar Pandiyan, Blake Hatfield, Aiden Lusher, Elliot Morton.
         </p>
       </template>
     </UFooter>
